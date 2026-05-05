@@ -1,9 +1,10 @@
 import argparse
 
 from reports.clickbait import ClickbaitReport
+from reports.base import Report
 
-REPORTS = {
-    "clickbait": ClickbaitReport,
+REPORTS: dict[str, Report] = {
+    "clickbait": ClickbaitReport(),
 }
 
 
