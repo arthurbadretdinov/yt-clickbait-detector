@@ -2,6 +2,15 @@ import csv
 from core.models import VideoRecord
 
 
+def read_csv_files(paths: list[str]) -> list[VideoRecord]:
+    result: list[VideoRecord] = []
+
+    for path in paths:
+        result.extend(read_csv(path))
+
+    return result
+
+
 def read_csv(path: str) -> list[VideoRecord]:
     result: list[VideoRecord] = []
 
