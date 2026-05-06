@@ -1,6 +1,6 @@
 from cli import parse_args, REPORTS
-from core.reader import read_csv_files
-from core.formatter import format_clickbait_report
+from infrastructure.reader import read_csv_files
+from infrastructure.formatter import format_clickbait_report
 
 
 def main() -> None:
