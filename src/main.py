@@ -4,17 +4,27 @@ from core.formatter import format_clickbait_report
 
 
 def main() -> None:
-    args = parse_args()
+    try:
+        args = parse_args()
 
-    data = read_csv_files(args.files)
+        data = read_csv_files(args.files)
 
-    report = REPORTS[args.report]
+        report = REPORTS[args.report]
 
-    result = report.generate(data)
+        result = report.generate(data)
 
-    output = format_clickbait_report(result)
+        output = format_clickbait_report(result)
 
-    print(output)
+        print(output)
+
+    except FileNotFoundError as e:
+        print(f"[ERROR] {e}")
+
+    except ValueError as e:
+        print(f"[ERROR] {e}")
+
+    except Exception as e:
+        print(f"[UNEXPECTED ERROR] {e}")
 
 
 if __name__ == "__main__":
