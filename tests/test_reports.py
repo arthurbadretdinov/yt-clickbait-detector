@@ -2,7 +2,7 @@ from reports.clickbait import ClickbaitReport
 from core.models import VideoRecord
 
 
-def test_clickbait_report(base_data: list[VideoRecord]):
+def test_clickbait_report(base_data: list[VideoRecord]) -> None:
     report = ClickbaitReport()
 
     result = report.generate(base_data)

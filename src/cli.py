@@ -8,7 +8,7 @@ REPORTS: dict[str, Report] = {
 }
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="YouTube metrics report generator")
 
     parser.add_argument(

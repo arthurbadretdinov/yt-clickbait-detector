@@ -2,7 +2,7 @@ from core.filters import filter_clickbait
 from core.models import VideoRecord
 
 
-def test_filter_clickbait(base_data: list[VideoRecord]):
+def test_filter_clickbait(base_data: list[VideoRecord]) -> None:
     result = filter_clickbait(base_data)
 
     expected_count = sum(1 for v in base_data if v.ctr > 15 and v.retention_rate < 40)

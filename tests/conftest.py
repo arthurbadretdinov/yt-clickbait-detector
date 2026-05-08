@@ -3,7 +3,7 @@ from core.models import VideoRecord
 
 
 @pytest.fixture
-def base_data():
+def base_data() -> list[VideoRecord]:
     return [
         # valid clickbait (CTR > 15 AND retention < 40)
         VideoRecord("Good Video 1", 26, 12),
